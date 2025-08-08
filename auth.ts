@@ -2,9 +2,9 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/models/User";
-import bcrypt from "bcrypt";
 import { connectToDB } from "./lib/connectDB";
 import type { SessionStrategy } from "next-auth"; // Add this import at the top
+import bcrypt from "bcrypt";
 
 
 export const authOptions = {
