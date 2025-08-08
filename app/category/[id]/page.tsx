@@ -11,272 +11,15 @@ import { Input } from "@/components/ui/input"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Star, MapPin, TrendingUp, Search, ChevronRight, Grid, List } from "lucide-react"
 
-// Enhanced mock data with subcategories and products
-const categoryData = {
-  grains: {
-    name: "Grains & Cereals",
-    description: "High-quality grains and cereals from verified farmers across Nigeria",
-    icon: "🌾",
-    subcategories: [
-      {
-        id: "rice",
-        name: "Rice",
-        description: "Premium rice varieties",
-        productCount: 45,
-        image: "/placeholder.svg?height=120&width=120&text=Rice",
-      },
-      {
-        id: "wheat",
-        name: "Wheat",
-        description: "Quality wheat grains",
-        productCount: 23,
-        image: "/placeholder.svg?height=120&width=120&text=Wheat",
-      },
-      {
-        id: "corn",
-        name: "Corn",
-        description: "Fresh and dried corn",
-        productCount: 67,
-        image: "/placeholder.svg?height=120&width=120&text=Corn",
-      },
-      {
-        id: "barley",
-        name: "Barley",
-        description: "Premium barley grains",
-        productCount: 12,
-        image: "/placeholder.svg?height=120&width=120&text=Barley",
-      },
-      {
-        id: "oats",
-        name: "Oats",
-        description: "Nutritious oat varieties",
-        productCount: 8,
-        image: "/placeholder.svg?height=120&width=120&text=Oats",
-      },
-      {
-        id: "millet",
-        name: "Millet",
-        description: "Traditional millet grains",
-        productCount: 15,
-        image: "/placeholder.svg?height=120&width=120&text=Millet",
-      },
-    ],
-    products: {
-      rice: [
-        {
-          id: "1",
-          title: "Premium Organic Rice - 50kg",
-          price: 25000,
-          location: "Lagos, Nigeria",
-          seller: "Adebayo Farms",
-          rating: 4.8,
-          image: "/placeholder.svg?height=200&width=300&text=Premium+Rice",
-          boosted: true,
-          subcategory: "rice",
-          description: "High-quality organic rice grown without pesticides",
-          condition: "New",
-          postedDate: "2024-01-15",
-        },
-        {
-          id: "2",
-          title: "Jasmine Rice - 25kg",
-          price: 18000,
-          location: "Ogun, Nigeria",
-          seller: "Rice Masters Ltd",
-          rating: 4.6,
-          image: "/placeholder.svg?height=200&width=300&text=Jasmine+Rice",
-          boosted: false,
-          subcategory: "rice",
-          description: "Aromatic jasmine rice perfect for special occasions",
-          condition: "New",
-          postedDate: "2024-01-14",
-        },
-        {
-          id: "3",
-          title: "Brown Rice - 50kg",
-          price: 22000,
-          location: "Kebbi, Nigeria",
-          seller: "Healthy Grains Co",
-          rating: 4.7,
-          image: "/placeholder.svg?height=200&width=300&text=Brown+Rice",
-          boosted: false,
-          subcategory: "rice",
-          description: "Nutritious brown rice with natural fiber",
-          condition: "New",
-          postedDate: "2024-01-13",
-        },
-      ],
-      wheat: [
-        {
-          id: "4",
-          title: "Hard Red Wheat - 100kg",
-          price: 35000,
-          location: "Kaduna, Nigeria",
-          seller: "Northern Wheat Farms",
-          rating: 4.5,
-          image: "/placeholder.svg?height=200&width=300&text=Hard+Wheat",
-          boosted: false,
-          subcategory: "wheat",
-          description: "Premium hard red wheat for flour production",
-          condition: "New",
-          postedDate: "2024-01-12",
-        },
-        {
-          id: "5",
-          title: "Soft White Wheat - 50kg",
-          price: 28000,
-          location: "Plateau, Nigeria",
-          seller: "Highland Grains",
-          rating: 4.4,
-          image: "/placeholder.svg?height=200&width=300&text=Soft+Wheat",
-          boosted: true,
-          subcategory: "wheat",
-          description: "Soft white wheat ideal for pastries and cakes",
-          condition: "New",
-          postedDate: "2024-01-11",
-        },
-      ],
-      corn: [
-        {
-          id: "6",
-          title: "Yellow Corn - 100kg",
-          price: 18000,
-          location: "Kano, Nigeria",
-          seller: "Northern Grains Co.",
-          rating: 4.6,
-          image: "/placeholder.svg?height=200&width=300&text=Yellow+Corn",
-          boosted: false,
-          subcategory: "corn",
-          description: "Fresh yellow corn suitable for animal feed and processing",
-          condition: "New",
-          postedDate: "2024-01-10",
-        },
-        {
-          id: "7",
-          title: "White Corn - 50kg",
-          price: 16000,
-          location: "Benue, Nigeria",
-          seller: "Middle Belt Farms",
-          rating: 4.3,
-          image: "/placeholder.svg?height=200&width=300&text=White+Corn",
-          boosted: false,
-          subcategory: "corn",
-          description: "Quality white corn for food processing",
-          condition: "New",
-          postedDate: "2024-01-09",
-        },
-      ],
-    },
-  },
-  fruits: {
-    name: "Fruits & Vegetables",
-    description: "Fresh fruits and vegetables harvested daily from local farms",
-    icon: "🍎",
-    subcategories: [
-      {
-        id: "fresh-fruits",
-        name: "Fresh Fruits",
-        description: "Seasonal fresh fruits",
-        productCount: 89,
-        image: "/placeholder.svg?height=120&width=120&text=Fruits",
-      },
-      {
-        id: "vegetables",
-        name: "Vegetables",
-        description: "Farm-fresh vegetables",
-        productCount: 156,
-        image: "/placeholder.svg?height=120&width=120&text=Vegetables",
-      },
-      {
-        id: "herbs",
-        name: "Herbs",
-        description: "Aromatic cooking herbs",
-        productCount: 34,
-        image: "/placeholder.svg?height=120&width=120&text=Herbs",
-      },
-      {
-        id: "spices",
-        name: "Spices",
-        description: "Traditional spices",
-        productCount: 67,
-        image: "/placeholder.svg?height=120&width=120&text=Spices",
-      },
-    ],
-    products: {
-      vegetables: [
-        {
-          id: "8",
-          title: "Fresh Tomatoes - 50kg",
-          price: 15000,
-          location: "Kano, Nigeria",
-          seller: "Musa Agriculture",
-          rating: 4.6,
-          image: "/placeholder.svg?height=200&width=300&text=Fresh+Tomatoes",
-          boosted: true,
-          subcategory: "vegetables",
-          description: "Farm-fresh tomatoes harvested daily",
-          condition: "New",
-          postedDate: "2024-01-15",
-        },
-      ],
-    },
-  },
-  livestock: {
-    name: "Livestock & Dairy",
-    description: "Quality livestock and dairy products from certified farms",
-    icon: "🐄",
-    subcategories: [
-      {
-        id: "cattle",
-        name: "Cattle",
-        description: "Beef and dairy cattle",
-        productCount: 78,
-        image: "/placeholder.svg?height=120&width=120&text=Cattle",
-      },
-      {
-        id: "poultry",
-        name: "Poultry",
-        description: "Chickens, ducks, and more",
-        productCount: 234,
-        image: "/placeholder.svg?height=120&width=120&text=Poultry",
-      },
-      {
-        id: "goats",
-        name: "Goats",
-        description: "Meat and dairy goats",
-        productCount: 45,
-        image: "/placeholder.svg?height=120&width=120&text=Goats",
-      },
-      {
-        id: "sheep",
-        name: "Sheep",
-        description: "Quality sheep breeds",
-        productCount: 67,
-        image: "/placeholder.svg?height=120&width=120&text=Sheep",
-      },
-    ],
-    products: {
-      cattle: [
-        {
-          id: "9",
-          title: "Holstein Dairy Cow",
-          price: 450000,
-          location: "Plateau, Nigeria",
-          seller: "Cattle Ranch Ltd",
-          rating: 4.7,
-          image: "/placeholder.svg?height=200&width=300&text=Holstein+Cow",
-          boosted: false,
-          subcategory: "cattle",
-          description: "Healthy Holstein dairy cow with excellent milk production",
-          condition: "New",
-          postedDate: "2024-01-14",
-        },
-      ],
-    },
-  },
+import { categoryData } from "@/constants/categoryData";
+
+interface CategoryPageProps {
+  params: {
+    id: string;
+  };
 }
 
-export default function CategoryPage({ params }: { params: { id: string } }) {
+export default function CategoryPage({ params }: CategoryPageProps) {
   const [category, setCategory] = useState<any>(null)
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null)
   const [products, setProducts] = useState<any[]>([])
@@ -287,10 +30,10 @@ export default function CategoryPage({ params }: { params: { id: string } }) {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
 
   // Fetch category data
-  useEffect(() => {
+   useEffect(() => {
     const fetchCategory = async () => {
       setLoading(true)
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      await new Promise((resolve) => setTimeout(resolve, 1000)) // simulate delay
 
       const categoryInfo = categoryData[params.id as keyof typeof categoryData]
       if (categoryInfo) {
@@ -299,7 +42,9 @@ export default function CategoryPage({ params }: { params: { id: string } }) {
       setLoading(false)
     }
 
-    fetchCategory()
+    if (params.id) {
+      fetchCategory()
+    }
   }, [params.id])
 
   // Fetch products when subcategory is selected
