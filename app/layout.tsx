@@ -46,7 +46,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`} cz-shortcut-listen="true">
         <SessionWrapper>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <TopNavigation />
+            <TopNavigation username={"JohnDoe"}/>
             <main className="max-w-full mx-auto pb-16 lg:pb-0">
               {/* <main className="max-w-6xl mx-auto pb-16 lg:pb-0"> */}
               <PWAInstallPrompt />

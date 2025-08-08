@@ -1510,7 +1510,7 @@ export const categoryData = {
       { id: "oral", name: "Oral" },
       { id: "injectable", name: "Injectable" },
     ],
-    products: {
+      products: {
       feed001: {
         id: "feed001",
         name: "High Protein Broiler Feed",
@@ -1529,6 +1529,24 @@ export const categoryData = {
         unit: "25kg bag",
         image: "/products/feed/dairy-cow-pellet.jpg"
       },
+      feed003: {
+        id: "feed003",
+        name: "Layer Mash Feed",
+        description: "Boosts egg production and improves shell strength.",
+        subcategory: "supplement",
+        price: 8700,
+        unit: "25kg bag",
+        image: "/products/feed/layer-mash.jpg"
+      },
+      feed004: {
+        id: "feed004",
+        name: "Chick Starter Feed",
+        description: "Specially formulated for healthy chick growth.",
+        subcategory: "starter",
+        price: 8000,
+        unit: "10kg bag",
+        image: "/products/feed/chick-starter.jpg"
+      }
     },
   },
 
