@@ -8,7 +8,6 @@ import { Toaster } from "@/components/ui/sonner";
 import SessionWrapper from "@/components/SessionWrapper/SessionWrapper";
 import MobileTabNavigation from "@/components/MobileTabNavigation/MobileTabNavigation";
 import TopNavigation from "@/components/TopNavigation/TopNavigation";
-import PWAInstallPrompt from "@/components/PWAInstallPrompt/PWAInstallPrompt";
 import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -49,7 +48,7 @@ export default function RootLayout({
             <TopNavigation username={"JohnDoe"}/>
             <main className="max-w-full mx-auto pb-16 lg:pb-0">
               {/* <main className="max-w-6xl mx-auto pb-16 lg:pb-0"> */}
-              <PWAInstallPrompt />
+              
 
               {children}
 
