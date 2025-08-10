@@ -32,6 +32,16 @@ export default function ContactSellerPage({ params }: { params: { id: string } }
     title: "Premium Organic Rice - 50kg",
     price: "₦25,000",
     image: "/placeholder.svg?height=200&width=300",
+    seller: {
+      name: "Adebayo Farms",
+      avatar: "/placeholder.svg?height=100&width=100",
+      rating: 4.8,
+      totalSales: 156,
+      location: "Lagos, Nigeria",
+      verified: true,
+      responseTime: "2 hours",
+      phone: "+234 800 123 4567",
+    }
   }
 
   const handleSendMessage = (e: React.FormEvent) => {
@@ -39,6 +49,11 @@ export default function ContactSellerPage({ params }: { params: { id: string } }
     toast("Your message has been sent to the seller. They will respond soon.")
     setMessage("")
   }
+
+  const handleCall = () => {
+    window.location.href = `tel:${product?.seller.phone}`
+  }
+
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -78,7 +93,7 @@ export default function ContactSellerPage({ params }: { params: { id: string } }
                     <MapPin className="w-4 h-4 text-gray-400 mr-2" />
                     {seller.location}
                   </div>
-                  <div className="flex items-center">
+                  <div className="hidden items-center">
                     <MessageSquare className="w-4 h-4 text-gray-400 mr-2" />
                     Responds in {seller.responseTime}
                   </div>
@@ -159,7 +174,7 @@ export default function ContactSellerPage({ params }: { params: { id: string } }
                     <Button type="submit" className="flex-1 bg-green-600 hover:bg-green-700">
                       Send Message
                     </Button>
-                    <Button type="button" variant="outline" className="flex items-center bg-transparent">
+                    <Button onClick={handleCall} type="button" variant="outline" className="flex items-center bg-transparent">
                       <Phone className="w-4 h-4 mr-2" />
                       Call Now
                     </Button>
@@ -169,7 +184,7 @@ export default function ContactSellerPage({ params }: { params: { id: string } }
             </Card>
 
             {/* Quick Actions */}
-            <Card className="mt-6">
+            <Card className="hidden mt-6">
               <CardHeader>
                 <CardTitle>Quick Actions</CardTitle>
               </CardHeader>

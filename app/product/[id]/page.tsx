@@ -37,8 +37,7 @@ const getProductById = (id: string) => {
     "1": {
       id: "1",
       title: "Premium Organic Rice - 50kg",
-      description:
-        "High-quality organic rice grown without pesticides in the fertile lands of Lagos. This premium variety is perfect for families, restaurants, and food processing companies. Our rice is carefully selected, cleaned, and packaged to maintain freshness and quality.\n\nGrown using sustainable farming practices, this rice offers excellent taste, aroma, and nutritional value. Each bag contains 50kg of premium long-grain rice.\n\nFeatures:\n• 100% Organic - No pesticides or chemicals\n• Long grain variety\n• 99.5% purity\n• Fresh harvest from December 2024\n• Properly cleaned and sorted\n• Moisture content: 14%\n\nIdeal for:\n• Households and families\n• Restaurants and catering\n• Food processing companies\n• Wholesale distribution",
+      description: "High-quality organic rice grown without pesticides in the fertile lands of Lagos. This premium variety is perfect for families, restaurants, and food processing companies. Our rice is carefully selected, cleaned, and packaged to maintain freshness and quality.\n\nGrown using sustainable farming practices, this rice offers excellent taste, aroma, and nutritional value. Each bag contains 50kg of premium long-grain rice.\n\nFeatures:\n• 100% Organic - No pesticides or chemicals\n• Long grain variety\n• 99.5% purity\n• Fresh harvest from December 2024\n• Properly cleaned and sorted\n• Moisture content: 14%\n\nIdeal for:\n• Households and families\n• Restaurants and catering\n• Food processing companies\n• Wholesale distribution",
       price: 25000,
       originalPrice: 30000,
       negotiable: true,
@@ -431,6 +430,44 @@ const getProductById = (id: string) => {
       postedDate: "2024-01-01T09:00:00Z",
       lastUpdated: "2024-01-01T15:00:00Z",
     },
+    "21": {
+      id: "21",
+      title: "Rice Farm Insurance Plan",
+      description: "Comprehensive insurance plan for rice farmers.",
+      price: 10000,
+      originalPrice: 11000,
+      negotiable: true,
+      condition: "New",
+      location: "Owerri, Imo State",
+      category: "Insurance",
+      subcategory: "crop-insurance",
+      boosted: true,
+      images: [
+        "/placeholder.svg?height=500&width=500&text=Tomato+Seedlings+Main",
+        "/placeholder.svg?height=500&width=500&text=Tomato+Seedlings+2",
+      ],
+      seller: {
+        id: "seller_1",
+        name: "GreenShield Agro",
+        avatar: "/placeholder.svg?height=60&width=60&text=ANH",
+        rating: 4.7,
+        totalSales: 50,
+        verified: true,
+        responseTime: "Within 2 hours",
+        phone: "+234 800 123 4576",
+        location: "Imo State",
+        joinedDate: "2023-09-01",
+        memberSince: "September 2023",
+        totalAds: 8,
+      },
+      stats: {
+        views: 180,
+        favorites: 35,
+        adId: "AD001234576",
+      },
+      postedDate: "2024-01-01T09:00:00Z",
+      lastUpdated: "2024-01-01T15:00:00Z",
+    },
   }
 
   return products[id as keyof typeof products] || null
@@ -703,7 +740,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                       <span>Total ads:</span>
                       <span>{product.seller.totalAds}</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="hidden justify-between">
                       <span>Response time:</span>
                       <span>{product.seller.responseTime}</span>
                     </div>

@@ -13,7 +13,7 @@ export default async function HomePage() {
   const session = await getServerSession(authOptions)
   const username = session?.user?.username || "Guest"
 
-  return (
+  return ( 
     <div className="min-h-screen bg-gray-50">
       <div className="hidden">
         <HeroSection />

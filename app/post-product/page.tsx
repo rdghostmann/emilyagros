@@ -13,6 +13,8 @@ import { Progress } from "@/components/ui/progress"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Upload, X, TrendingUp, CheckCircle, ImageIcon, Loader2, Save, Eye } from "lucide-react"
 import { toast } from "sonner"
+import { nigerianStates } from "@/constants/nigerianStates"
+import { categories } from "@/constants/categories"
 
 interface FormData {
   title: string
@@ -31,72 +33,33 @@ interface FormErrors {
   [key: string]: string
 }
 
-const categories = {
-  grains: {
-    name: "Grains & Cereals",
-    subcategories: ["Rice", "Wheat", "Corn", "Barley", "Oats", "Millet"],
-  },
-  fruits: {
-    name: "Fruits & Vegetables",
-    subcategories: ["Fresh Fruits", "Vegetables", "Herbs", "Spices", "Leafy Greens"],
-  },
-  livestock: {
-    name: "Livestock & Dairy",
-    subcategories: ["Cattle", "Poultry", "Goats", "Sheep", "Dairy Products", "Meat"],
-  },
-  equipment: {
-    name: "Farm Equipment",
-    subcategories: ["Tractors", "Tools", "Irrigation", "Harvesting", "Processing"],
-  },
-  seeds: {
-    name: "Seeds & Fertilizers",
-    subcategories: ["Seeds", "Fertilizers", "Pesticides", "Soil Amendments"],
-  },
-  aquaculture: {
-    name: "Aquaculture",
-    subcategories: ["Fish", "Shrimp", "Aquatic Plants", "Fish Feed", "Equipment"],
-  },
-}
+// const categories = {
+//   grains: {
+//     name: "Grains & Cereals",
+//     subcategories: ["Rice", "Wheat", "Corn", "Barley", "Oats", "Millet"],
+//   },
+//   fruits: {
+//     name: "Fruits & Vegetables",
+//     subcategories: ["Fresh Fruits", "Vegetables", "Herbs", "Spices", "Leafy Greens"],
+//   },
+//   livestock: {
+//     name: "Livestock & Dairy",
+//     subcategories: ["Cattle", "Poultry", "Goats", "Sheep", "Dairy Products", "Meat"],
+//   },
+//   equipment: {
+//     name: "Farm Equipment",
+//     subcategories: ["Tractors", "Tools", "Irrigation", "Harvesting", "Processing"],
+//   },
+//   seeds: {
+//     name: "Seeds & Fertilizers",
+//     subcategories: ["Seeds", "Fertilizers", "Pesticides", "Soil Amendments"],
+//   },
+//   aquaculture: {
+//     name: "Aquaculture",
+//     subcategories: ["Fish", "Shrimp", "Aquatic Plants", "Fish Feed", "Equipment"],
+//   },
+// }
 
-const nigerianStates = [
-  "Abia",
-  "Adamawa",
-  "Akwa Ibom",
-  "Anambra",
-  "Bauchi",
-  "Bayelsa",
-  "Benue",
-  "Borno",
-  "Cross River",
-  "Delta",
-  "Ebonyi",
-  "Edo",
-  "Ekiti",
-  "Enugu",
-  "FCT",
-  "Gombe",
-  "Imo",
-  "Jigawa",
-  "Kaduna",
-  "Kano",
-  "Katsina",
-  "Kebbi",
-  "Kogi",
-  "Kwara",
-  "Lagos",
-  "Nasarawa",
-  "Niger",
-  "Ogun",
-  "Ondo",
-  "Osun",
-  "Oyo",
-  "Plateau",
-  "Rivers",
-  "Sokoto",
-  "Taraba",
-  "Yobe",
-  "Zamfara",
-]
 
 export default function PostProductPage() {
   const [formData, setFormData] = useState<FormData>({
@@ -372,7 +335,7 @@ export default function PostProductPage() {
                       <SelectValue placeholder="Select subcategory" />
                     </SelectTrigger>
                     <SelectContent>
-                      {selectedCategory?.subcategories.map((sub) => (
+                      {selectedCategory?.subcategories.map((sub: any) => (
                         <SelectItem key={sub} value={sub}>
                           {sub}
                         </SelectItem>
@@ -490,6 +453,18 @@ export default function PostProductPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <div>
+                  <Label htmlFor="city">City *</Label>
+                  <Input
+                    id="city"
+                    placeholder="Enter city"
+                    value={formData.city}
+                    onChange={(e) => handleInputChange("city", e.target.value)}
+                    className={errors.city ? "border-red-500" : ""}
+                  />
+                  {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city}</p>}
+                </div>
+
                 <div>
                   <Label htmlFor="state">State *</Label>
                   <Select value={formData.state} onValueChange={(value : any) => handleInputChange("state", value)}>
@@ -505,18 +480,6 @@ export default function PostProductPage() {
                     </SelectContent>
                   </Select>
                   {errors.state && <p className="text-red-500 text-sm mt-1">{errors.state}</p>}
-                </div>
-
-                <div>
-                  <Label htmlFor="city">City *</Label>
-                  <Input
-                    id="city"
-                    placeholder="Enter city"
-                    value={formData.city}
-                    onChange={(e) => handleInputChange("city", e.target.value)}
-                    className={errors.city ? "border-red-500" : ""}
-                  />
-                  {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city}</p>}
                 </div>
               </div>
 
@@ -550,13 +513,13 @@ export default function PostProductPage() {
               type="button"
               variant="outline"
               onClick={saveDraft}
-              className="flex-1 bg-transparent"
+              className="hidden flex-1 bg-transparent"
               disabled={isSubmitting}
             >
               <Save className="w-4 h-4 mr-2" />
               Save Draft
             </Button>
-            <Button type="button" variant="outline" className="flex-1 bg-transparent" disabled={isSubmitting}>
+            <Button type="button" variant="outline" className="hidden flex-1 bg-transparent" disabled={isSubmitting}>
               <Eye className="w-4 h-4 mr-2" />
               Preview
             </Button>

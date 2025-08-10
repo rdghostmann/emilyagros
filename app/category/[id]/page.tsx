@@ -186,9 +186,9 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <Image
                         src={subcategory.image || "/placeholder.svg"}
                         alt={subcategory.name}
-                        width={120}
-                        height={120}
-                        className="w-full h-24 object-cover rounded-lg mb-3 group-hover:scale-105 transition-transform"
+                        width={50}
+                        height={50}
+                        className="w-24 h-24 border-2 border-gray-200 mx-auto object-cover bg-center rounded-full mb-3 group-hover:scale-105 transition-transform"
                       />
                     </div>
                     <h3 className="font-semibold text-gray-800 mb-2">{subcategory.name}</h3>

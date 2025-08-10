@@ -22,6 +22,7 @@ import {
   Check,
   CheckCheck,
 } from "lucide-react"
+import Link from "next/link"
 
 const conversations = [
   {
@@ -33,6 +34,7 @@ const conversations = [
       lastSeen: "Online",
     },
     product: {
+      id: "1",
       title: "Premium Organic Rice - 50kg",
       image: "/placeholder.svg?height=40&width=40&text=Rice",
       price: "₦25,000",
@@ -104,6 +106,7 @@ const conversations = [
       lastSeen: "Last seen 1 hour ago",
     },
     product: {
+      id: "2",
       title: "Hybrid Maize Seeds - 10kg",
       image: "/placeholder.svg?height=40&width=40&text=Seeds",
       price: "₦8,500",
@@ -140,6 +143,7 @@ const conversations = [
       lastSeen: "Last seen 3 hours ago",
     },
     product: {
+      id: "3",
       title: "Fresh Tomatoes - 50kg",
       image: "/placeholder.svg?height=40&width=40&text=Tomatoes",
       price: "₦15,000",
@@ -446,7 +450,7 @@ export default function MessagesPage() {
                         <p className="text-green-600 font-semibold">{selectedConversation.product.price}</p>
                       </div>
                       <Button size="sm" variant="outline" className="bg-transparent">
-                        View Product
+                      <Link href="">  View Product</Link>
                       </Button>
                     </div>
                   </div>
@@ -484,7 +488,7 @@ export default function MessagesPage() {
 
                 {/* Message Input */}
                 <div className="p-4 border-t bg-gray-50">
-                  <div className="flex items-end space-x-3">
+                  <div className="flex items-end space-x-3 mb-14">
                     <Button variant="ghost" size="icon" className="mb-2">
                       <Paperclip className="w-5 h-5 text-gray-500" />
                     </Button>

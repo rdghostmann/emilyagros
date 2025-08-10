@@ -20,7 +20,7 @@ export const categories = [
     id: "trending",
     name: "Trending",
     icon: TrendingUp,
-    subcategories: ["Tractors", "Shellers", "Sprayers", "Others"],
+    subcategories: ["Others"],
     color: "text-orange-500",
     bgColor: "bg-gray-200",
     image: "/icons/0.jpg",
@@ -28,7 +28,7 @@ export const categories = [
     href: "/marketplace?filter=trending",
   },
   {
-    id: "livestock-pets",
+    id: "livestock",
     name: "Livestock & Pets",
     icon: Cow,
     subcategories: ["Poultry", "Cattle", "Goat", "Pig", "Rabbits", "Sheeps", "Turkey"],
@@ -50,7 +50,7 @@ export const categories = [
     href: "/category/services",
   },
   {
-    id: "agro-insurance",
+    id: "insurance",
     name: "Agro Insurance",
     icon: Shield,
     subcategories: ["Crop Insurance", "Livestock Insurance", "Farm Equipment Insurance", "Weather Insurance"],
@@ -61,7 +61,7 @@ export const categories = [
     href: "/category/insurance",
   },
   {
-    id: "tractor-farm-equipment",
+    id: "equipment",
     name: "Tractor / Farm Machines",
     icon: Tractor,
     subcategories: ["Tractor", "Sheller", "Sprayer", "Knapsack Sprayer", "Fish Pond", "Others"],
@@ -72,7 +72,7 @@ export const categories = [
     href: "/category/equipments",
   },
   {
-    id: "animal-mating",
+    id: "animalMating",
     name: "Animal Mating",
     icon: Heart,
     subcategories: ["Dog", "Goat", "Pig", "AI Service", "Natural Mating"],
@@ -83,7 +83,7 @@ export const categories = [
     href: "/category/animalMating",
   },
   {
-    id: "agro-chemicals-insecticides-pesticides",
+    id: "agroChemicals",
     name: "Agro Chemicals / Pesticides",
     icon: Sprout,
     subcategories: ["Herbicide", "Pesticide", "Fungicide"],
@@ -94,7 +94,7 @@ export const categories = [
     href: "/category/agroChemicals",
   },
   {
-    id: "food-fruits-vegetables",
+    id: "fruits",
     name: "Food / Fruits & Vegetables",
     icon: Apple,
     subcategories: ["Fruit", "Vegetable", "Fresh", "Dried", "Packaged"],
@@ -127,7 +127,7 @@ export const categories = [
     href: "/category/ornamentals",
   },
   {
-    id: "animal-loan",
+    id: "animalLoan",
     name: "Animal Loan",
     icon: DollarSign,
     subcategories: ["Preventive", "Curative", "Supplement"],
@@ -149,7 +149,7 @@ export const categories = [
     href: "/category/fertilizers",
   },
   {
-    id: "animal-feed",
+    id: "animalFeed",
     name: "Animal Feed",
     icon: Package,
     subcategories: ["Preventive", "Curative", "Supplement", "Powder", "Oral", "Injectable"],
@@ -160,7 +160,7 @@ export const categories = [
     href: "/category/animalFeed",
   },
   {
-    id: "animal-pharmacy",
+    id: "animalPharmacy",
     name: "Animal Pharmacy",
     icon: Pill,
     subcategories: ["Preventive", "Curative", "Supplement", "Powder", "Oral", "Injectable"],
@@ -171,7 +171,7 @@ export const categories = [
     href: "/category/animalPharmacy",
   },
   {
-    id: "animal-accessories",
+    id: "animalAccessories",
     name: "Animal Accessories",
     icon: Gamepad2,
     subcategories: ["Drinkers", "Cages", "Feeding", "Transporting", "Housing"],

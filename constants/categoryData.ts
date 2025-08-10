@@ -5,10 +5,12 @@ export const categoryData = {
     description: "Quality livestock and pet products from certified farms",
     icon: "🐄",
     subcategories: [
-      { id: "cattle", name: "Cattle", description: "Beef and dairy cattle", productCount: 78, image: "/placeholder.svg?height=120&width=120&text=Cattle" },
-      { id: "poultry", name: "Poultry", description: "Chickens, ducks, and more", productCount: 234, image: "/placeholder.svg?height=120&width=120&text=Poultry" },
-      { id: "goats", name: "Goats", description: "Meat and dairy goats", productCount: 45, image: "/placeholder.svg?height=120&width=120&text=Goats" },
-      { id: "sheep", name: "Sheep", description: "Quality sheep breeds", productCount: 67, image: "/placeholder.svg?height=120&width=120&text=Sheep" },
+      { id: "cattle", name: "Cattle", description: "Beef and dairy cattle", productCount: 78, image: "/farm-animals/cows.png" },
+      { id: "poultry", name: "Poultry", description: "Chickens, ducks, and more", productCount: 234, image: "/farm-animals/chickens.png" },
+      { id: "goats", name: "Goats", description: "Meat and dairy goats", productCount: 45, image: "/farm-animals/goats.png" },
+      { id: "sheep", name: "Sheep", description: "Quality sheep breeds", productCount: 67, image: "/farm-animals/sheeps.png" },
+      { id: "turkey", name: "Turkey", description: "Quality turkey breeds", productCount: 67, image: "/farm-animals/turkey.png" },
+      { id: "pet", name: "Pets", description: "Fine Pets for breeds", productCount: 67, image: "/farm-animals/rabbits.png" },
     ],
     products: {
       cattle: [
@@ -19,7 +21,7 @@ export const categoryData = {
           location: "Plateau, Nigeria",
           seller: "Cattle Ranch Ltd",
           rating: 4.7,
-          image: "/placeholder.svg?height=200&width=300&text=Holstein+Cow",
+          image: "/farm-animals/bull.jpg",
           boosted: false,
           subcategory: "cattle",
           description: "Healthy Holstein dairy cow with excellent milk production",
@@ -110,9 +112,9 @@ export const categoryData = {
     description: "Professional agricultural services for every need",
     icon: "🤝",
     subcategories: [
-      { id: "tractor-hiring", name: "Tractor Hiring", productCount: 6 },
-      { id: "farm-setup", name: "Farm Setup", productCount: 8 },
-      { id: "veterinary", name: "Veterinary", productCount: 4 },
+      { id: "tractor-hiring", name: "Tractor Hiring", productCount: 6, image: "" },
+      { id: "farm-setup", name: "Farm Setup", productCount: 8, image: "" },
+      { id: "veterinary", name: "Veterinary", productCount: 4, image: "" },
     ],
     products: {
       "farm-setup": [
@@ -170,10 +172,10 @@ export const categoryData = {
     description: "Reliable insurance options for farms, crops, and equipment",
     icon: "🛡️",
     subcategories: [
-      { id: "crop-insurance", name: "Crop Insurance", productCount: 3 },
-      { id: "livestock-insurance", name: "Livestock Insurance", productCount: 2 },
-      { id: "equipment-insurance", name: "Farm Equipment Insurance", productCount: 1 },
-      { id: "weather-insurance", name: "Weather Insurance", productCount: 2 },
+      { id: "crop-insurance", name: "Crop Insurance", productCount: 3, image: "" },
+      { id: "livestock-insurance", name: "Livestock Insurance", productCount: 2, image: "" },
+      { id: "equipment-insurance", name: "Farm Equipment Insurance", productCount: 1, image: "" },
+      { id: "weather-insurance", name: "Weather Insurance", productCount: 2, image: "" },
     ],
     products: {
       "crop-insurance": [
@@ -769,28 +771,28 @@ export const categoryData = {
         name: "Fresh Fruits",
         description: "Seasonal fresh fruits",
         productCount: 89,
-        image: "/placeholder.svg?height=120&width=120&text=Fruits",
+        image: "/Fruits",
       },
       {
         id: "vegetables",
         name: "Vegetables",
         description: "Farm-fresh vegetables",
         productCount: 156,
-        image: "/placeholder.svg?height=120&width=120&text=Vegetables",
+        image: "/Vegetables",
       },
       {
         id: "herbs",
         name: "Herbs",
         description: "Aromatic cooking herbs",
         productCount: 34,
-        image: "/placeholder.svg?height=120&width=120&text=Herbs",
+        image: "/Herbs",
       },
       {
         id: "spices",
         name: "Spices",
         description: "Traditional spices",
         productCount: 67,
-        image: "/placeholder.svg?height=120&width=120&text=Spices",
+        image: "/Spices",
       },
     ],
     products: {
@@ -1255,7 +1257,7 @@ export const categoryData = {
         {
           id: "vetloan-001",
           title: "VetCare Loan Plan",
-          price: "Flexible",
+          price: 20000,
           location: "Ibadan, Nigeria",
           seller: "AgroVet Credit",
           rating: 4.5,
@@ -1497,7 +1499,6 @@ export const categoryData = {
       ],
     },
   },
-
   animalFeed: {
     name: "Animal Feed",
     description: "Nutritious feed to promote animal growth and health",
@@ -1510,46 +1511,77 @@ export const categoryData = {
       { id: "oral", name: "Oral" },
       { id: "injectable", name: "Injectable" },
     ],
-      products: {
-      feed001: {
-        id: "feed001",
-        name: "High Protein Broiler Feed",
-        description: "Formulated for rapid growth in broiler chickens.",
-        subcategory: "supplement",
-        price: 12000,
-        unit: "50kg bag",
-        image: "/products/feed/high-protein-broiler.jpg"
-      },
-      feed002: {
-        id: "feed002",
-        name: "Dairy Cow Pellet Feed",
-        description: "Rich in fiber and essential minerals for milk production.",
-        subcategory: "oral",
-        price: 9500,
-        unit: "25kg bag",
-        image: "/products/feed/dairy-cow-pellet.jpg"
-      },
-      feed003: {
-        id: "feed003",
-        name: "Layer Mash Feed",
-        description: "Boosts egg production and improves shell strength.",
-        subcategory: "supplement",
-        price: 8700,
-        unit: "25kg bag",
-        image: "/products/feed/layer-mash.jpg"
-      },
-      feed004: {
-        id: "feed004",
-        name: "Chick Starter Feed",
-        description: "Specially formulated for healthy chick growth.",
-        subcategory: "starter",
-        price: 8000,
-        unit: "10kg bag",
-        image: "/products/feed/chick-starter.jpg"
-      }
+    products: {
+      supplement: [
+        {
+          id: "feed001",
+          title: "High Protein Broiler Feed",
+          description: "Formulated for rapid growth in broiler chickens.",
+          subcategory: "supplement",
+          price: 12000,
+          unit: "50kg bag",
+          image: "/products/feed/high-protein-broiler.jpg",
+          location: "Ibadan, Nigeria",
+          seller: "AgroVet Credit",
+          rating: 4.5,
+          boosted: true,
+          condition: "Loan",
+          postedDate: "2024-05-10",
+        }
+      ],
+      oral: [
+        {
+          id: "feed002",
+          title: "Dairy Cow Pellet Feed",
+          description: "Rich in fiber and essential minerals for milk production.",
+          subcategory: "oral",
+          price: 9500,
+          unit: "25kg bag",
+          image: "/products/feed/dairy-cow-pellet.jpg",
+          location: "Ibadan, Nigeria",
+          seller: "AgroVet Credit",
+          rating: 4.5,
+          boosted: true,
+          condition: "Loan",
+          postedDate: "2024-05-10",
+        }
+      ],
+      injectable: [
+        {
+          id: "feed003",
+          title: "Layer Mash Feed",
+          description: "Boosts egg production and improves shell strength.",
+          subcategory: "injectable",
+          price: 8700,
+          unit: "25kg bag",
+          image: "/products/feed/layer-mash.jpg",
+          location: "Ibadan, Nigeria",
+          seller: "AgroVet Credit",
+          rating: 4.5,
+          boosted: true,
+          condition: "Loan",
+          postedDate: "2024-05-10",
+        }
+      ],
+      starter: [
+        {
+          id: "feed004",
+          title: "Chick Starter Feed",
+          description: "Specially formulated for healthy chick growth.",
+          subcategory: "starter",
+          price: 8000,
+          unit: "10kg bag",
+          image: "/products/feed/chick-starter.jpg",
+          location: "Ibadan, Nigeria",
+          seller: "AgroVet Credit",
+          rating: 4.5,
+          boosted: true,
+          condition: "Loan",
+          postedDate: "2024-05-10",
+        }
+      ]
     },
   },
-
   animalPharmacy: {
     name: "Animal Pharmacy",
     description: "Veterinary medications and health supplies",
@@ -1563,27 +1595,42 @@ export const categoryData = {
       { id: "injectable", name: "Injectable" },
     ],
     products: {
-      med001: {
-        id: "med001",
-        name: "Vitamin B12 Injection",
-        description: "Boosts energy and immunity in livestock.",
-        subcategory: "injectable",
-        price: 2500,
-        unit: "100ml vial",
-        image: "/products/pharmacy/vitamin-b12.jpg"
-      },
-      med002: {
-        id: "med002",
-        name: "Anti-Worm Oral Suspension",
-        description: "Effective dewormer for poultry and ruminants.",
-        subcategory: "oral",
-        price: 1800,
-        unit: "500ml bottle",
-        image: "/products/pharmacy/anti-worm-suspension.jpg"
-      },
+      injectable: [
+        {
+          id: "med001",
+          title: "Vitamin B12 Injection",
+          description: "Boosts energy and immunity in livestock.",
+          subcategory: "injectable",
+          price: 2500,
+          unit: "100ml vial",
+          image: "/products/pharmacy/vitamin-b12.jpg",
+          location: "Ibadan, Nigeria",
+          seller: "AgroVet Credit",
+          rating: 4.5,
+          boosted: true,
+          condition: "Loan",
+          postedDate: "2024-05-10",
+        }
+      ],
+      oral: [
+        {
+          id: "med002",
+          title: "Anti-Worm Oral Suspension",
+          description: "Effective dewormer for poultry and ruminants.",
+          subcategory: "oral",
+          price: 1800,
+          unit: "500ml bottle",
+          image: "/products/pharmacy/anti-worm-suspension.jpg",
+          location: "Ibadan, Nigeria",
+          seller: "AgroVet Credit",
+          rating: 4.5,
+          boosted: true,
+          condition: "Loan",
+          postedDate: "2024-05-10",
+        }
+      ],
     },
   },
-
   animalAccessories: {
     name: "Animal Accessories",
     description: "Tools and products for managing livestock",
@@ -1596,24 +1643,55 @@ export const categoryData = {
       { id: "housing", name: "Housing" },
     ],
     products: {
-      acc001: {
-        id: "acc001",
-        name: "Automatic Chicken Drinker",
-        description: "Ensures steady water supply for poultry.",
-        subcategory: "drinkers",
-        price: 3500,
-        unit: "1 unit",
-        image: "/products/accessories/auto-drinker.jpg"
-      },
-      acc002: {
-        id: "acc002",
-        name: "Plastic Brooder Cage",
-        description: "Portable cage ideal for chicks and small animals.",
-        subcategory: "cages",
-        price: 8000,
-        unit: "1 unit",
-        image: "/products/accessories/brooder-cage.jpg"
-      },
+      drinkers: [
+        {
+          id: "acc001",
+          title: "Automatic Chicken Drinker",
+          description: "Ensures steady water supply for poultry.",
+          subcategory: "drinkers",
+          price: 3500,
+          unit: "1 unit",
+          image: "/products/accessories/auto-drinker.jpg",
+          location: "Ibadan, Nigeria",
+          seller: "AgroVet Credit",
+          rating: 4.5,
+          boosted: true,
+          condition: "Loan",
+          postedDate: "2024-05-10",
+        }
+      ],
+      cages: [
+        {
+          id: "acc002",
+          title: "Plastic Brooder Cage",
+          description: "Portable cage ideal for chicks and small animals.",
+          subcategory: "cages",
+          price: 8000,
+          unit: "1 unit",
+          image: "/products/accessories/brooder-cage.jpg",
+          location: "Ibadan, Nigeria",
+          seller: "AgroVet Credit",
+          rating: 4.5,
+          boosted: true,
+          condition: "Loan",
+          postedDate: "2024-05-10",
+        },
+        {
+          id: "acc003",
+          title: "Metal Brooder Cage",
+          description: "Portable cage ideal for dogs and big animals.",
+          subcategory: "cages",
+          price: 12000,
+          unit: "1 unit",
+          image: "/products/accessories/brooder-cage.jpg",
+          location: "Ibadan, Nigeria",
+          seller: "AgroVet Credit",
+          rating: 4.5,
+          boosted: true,
+          condition: "Loan",
+          postedDate: "2024-05-10",
+        }
+      ],
     },
   }
 

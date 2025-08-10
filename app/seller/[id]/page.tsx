@@ -44,6 +44,7 @@ const getSellerById = (id: string) => {
       memberSince: "March 2022",
       totalAds: 24,
       activeAds: 18,
+      profileViews: 1234,
       description:
         "Adebayo Farms is a leading organic rice producer in Lagos State with over 10 years of experience in sustainable farming. We specialize in premium quality rice varieties and are committed to providing the best products to our customers across Nigeria.",
       specialties: ["Organic Rice", "Sustainable Farming", "Premium Grains"],
@@ -55,7 +56,6 @@ const getSellerById = (id: string) => {
         twitter: "adebayofarms",
       },
       stats: {
-        profileViews: 1234,
         followers: 567,
         following: 89,
       },
@@ -376,9 +376,8 @@ export default function SellerProfilePage({ params }: { params: { id: string } }
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
-                              className={`w-4 h-4 ${
-                                i < review.rating ? "text-yellow-400 fill-current" : "text-gray-300"
-                              }`}
+                              className={`w-4 h-4 ${i < review.rating ? "text-yellow-400 fill-current" : "text-gray-300"
+                                }`}
                             />
                           ))}
                         </div>
@@ -413,7 +412,7 @@ export default function SellerProfilePage({ params }: { params: { id: string } }
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Profile Views:</span>
-                    <span className="font-medium">{seller.stats.profileViews.toLocaleString()}</span>
+                    <span className="font-medium">{seller.profileViews.toLocaleString()}</span>
                   </div>
                 </CardContent>
               </Card>
