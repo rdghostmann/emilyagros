@@ -15,7 +15,10 @@ import { Button } from "@/components/ui/button";
 const Signin = () => {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [registerData, setRegisterData] = useState({
-    name: "",
+    username: "",
+    firstName: "",
+    lastName: "",
+    phone: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -66,7 +69,10 @@ const Signin = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: registerData.name,
+          username: registerData.username,
+          firstName: registerData.firstName,
+          lastName: registerData.lastName,
+          phone: registerData.phone,
           email: registerData.email,
           password: registerData.password,
         }),
@@ -83,7 +89,10 @@ const Signin = () => {
 
       toast.success("Registration successful! You can now log in.");
       setRegisterData({
-        name: "",
+        username: "",
+        firstName: "",
+        lastName: "",
+        phone: "",
         email: "",
         password: "",
         confirmPassword: "",
@@ -140,15 +149,15 @@ const Signin = () => {
           <div className="text-center mb-8 lg:hidden">
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-xl">
-              {/* <div className="w-40 h-40 bg-white rounded-xl flex items-center justify-center shadow-xl"> */}
-                {/* <img src="/emily-agros-logo.png" alt="EmilyAgros Logo" className="w-full h-auto" /> */}
-                <Sprout className="h-10 w-10 text-white" />
+                <div className="w-40 h-40 bg-white rounded-xl flex items-center justify-center shadow-xl">
+                  <img src="/emily-logo-no-bg.png" alt="EmilyAgros Logo" className="w-full h-auto" />
+                </div>
               </div>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                EmilyAgros
+              </h1>
+              <p className="text-slate-600">Your Gateway to Agricutural Products..</p>
             </div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-              EmilyAgros
-            </h1>
-            <p className="text-slate-600">Your Gateway to Agricutural Products..</p>
           </div>
 
 
@@ -267,15 +276,64 @@ const Signin = () => {
                   <form onSubmit={handleRegisterSubmit} className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="text-slate-700">
-                        Full Name
+                        Username
                       </Label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
                         <Input
                           id="name"
                           placeholder="John Doe"
-                          value={registerData.name}
-                          onChange={(e) => setRegisterData({ ...registerData, name: e.target.value })}
+                          value={registerData.username}
+                          onChange={(e) => setRegisterData({ ...registerData, username: e.target.value })}
+                          className="pl-10 border-green-200 focus:border-green-500 focus:ring-green-500"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="first-name" className="text-slate-700">
+                        First Name
+                      </Label>
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
+                        <Input
+                          id="first-name"
+                          placeholder="John Doe"
+                          value={registerData.firstName}
+                          onChange={(e) => setRegisterData({ ...registerData, firstName: e.target.value })}
+                          className="pl-10 border-green-200 focus:border-green-500 focus:ring-green-500"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="last-name" className="text-slate-700">
+                        Last Name
+                      </Label>
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
+                        <Input
+                          id="last-name"
+                          placeholder="John Doe"
+                          value={registerData.lastName}
+                          onChange={(e) => setRegisterData({ ...registerData, lastName: e.target.value })}
+                          className="pl-10 border-green-200 focus:border-green-500 focus:ring-green-500"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="register-phone" className="text-slate-700">
+                        Phone
+                      </Label>
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
+                        <Input
+                          id="register-phone"
+                          type="tel"
+                          placeholder="+234"
+                          value={registerData.lastName}
+                          onChange={(e) => setRegisterData({ ...registerData, lastName: e.target.value })}
                           className="pl-10 border-green-200 focus:border-green-500 focus:ring-green-500"
                           required
                         />

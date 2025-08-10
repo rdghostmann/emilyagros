@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import User from "@/models/User";
-import UserAsset from "@/models/UserAsset";
 import { connectToDB } from "@/lib/connectDB";
 
-export async function POST(req) {
+export async function POST(req:any) {
   try {
     await connectToDB();
 
@@ -14,12 +13,10 @@ export async function POST(req) {
       lastName,
       phone,
       email,
-      password,
-      city,
-      state,
+      password
     } = await req.json();
 
-    if (!username || !firstName || !lastName || !phone || !email || !password || !city || !state ) {
+    if (!username || !firstName || !lastName || !phone || !email || !password ) {
       return NextResponse.json(
         { message: "All required fields must be filled" },
         { status: 400 }
@@ -44,15 +41,13 @@ export async function POST(req) {
       phone,
       email,
       password: hashedPassword,
-      city: city || "",
-      state: state || "",
     });
 
     return NextResponse.json(
       { message: "Registration successful" },
       { status: 201 }
     );
-  } catch (err) {
+  } catch (err:any) {
     console.error("Registration error:", err);
     return NextResponse.json(
       { message: "Registration failed", error: err.message },
