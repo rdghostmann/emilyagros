@@ -1,3 +1,4 @@
+import { Category } from "@/types/types";
 import {
   TrendingUp,
   MilkIcon as Cow,
@@ -15,7 +16,7 @@ import {
   Gamepad2,
 } from "lucide-react"
 
-export const categories = [
+export const categories: Category[] = [
   {
     id: "trending",
     name: "Trending",
