@@ -1,35 +1,38 @@
 import mongoose, { Schema, Document, models } from "mongoose";
 
-const ReviewSchema = new Schema(
-    {
-        reviewer: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
-        },
-        rating: {
-            type: Number,
-            default: 0
-        },
-        avatar: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
-        },
-        comment: {
-            type: String,
-        },
-        date: {
-            type: Date,
-        },
-        verified: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
-        }
+export interface IReview extends Document {
+  reviewer: mongoose.Types.ObjectId;
+  rating: number;
+  comment?: string;
+  verifiedBy?: mongoose.Types.ObjectId;
+}
+
+const ReviewSchema = new Schema<IReview>(
+  {
+    reviewer: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
-    {
-        timestamps: true,
-    }
+    rating: {
+      type: Number,
+      min: 1,
+      max: 5,
+      required: true,
+    },
+    comment: {
+      type: String,
+      trim: true,
+    },
+    verifiedBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+  },
+  {
+    timestamps: true,
+  }
 );
 
-// Prevent model overwrite issue in dev
-const Review = models?.Review || mongoose.model("Review", ReviewSchema);
+const Review = models?.Review || mongoose.model<IReview>("Review", ReviewSchema);
 export default Review;

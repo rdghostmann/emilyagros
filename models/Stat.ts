@@ -1,24 +1,31 @@
 import mongoose, { Schema, Document, models } from "mongoose";
 
-const StatSchema = new Schema(
-    {
-        views: {
-            type: Number,
-            default: 0
-        },
-        favorites: {
-            type: String,
-        },
-        adId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product'
-        },
+export interface IStat extends Document {
+  views: number;
+  favorites: number;
+  adId: mongoose.Types.ObjectId;
+}
+
+const StatSchema = new Schema<IStat>(
+  {
+    views: {
+      type: Number,
+      default: 0,
     },
-    {
-        timestamps: true,
-    }
+    favorites: {
+      type: Number,
+      default: 0,
+    },
+    adId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Product",
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
 );
 
-// Prevent model overwrite issue in dev
-const Stat = models?.Stat || mongoose.model("Stat", StatSchema);
+const Stat = models?.Stat || mongoose.model<IStat>("Stat", StatSchema);
 export default Stat;
